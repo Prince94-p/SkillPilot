@@ -42,4 +42,3 @@ A sleek, lightweight Chrome Extension to automate and help you navigate your Cou
 
 ***
 
-Created by [YG](https://github.com/Youssef-Ghafir)
