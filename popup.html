@@ -259,6 +259,10 @@
       border-radius: 4px;
     }
 
+    .toggle-pw-btn:hover {
+      color: var(--text-main);
+    }
+
     /* Buttons */
     .btn {
       display: inline-flex;
@@ -337,12 +341,24 @@
     #status {
       color: #10b981;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .link-key {
       color: #818cf8;
       text-decoration: none;
       font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      transition: color 0.15s ease;
+    }
+
+    .link-key:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
     }
 
     /* Output Results Box */
@@ -360,6 +376,15 @@
       backdrop-filter: blur(6px);
     }
 
+    #result::-webkit-scrollbar {
+      width: 4px;
+    }
+    #result::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    /* Loading Spinner */
     .spinner {
       width: 14px;
       height: 14px;
@@ -372,6 +397,60 @@
 
     @keyframes spin {
       to { transform: rotate(360deg); }
+    }
+
+    /* Styled Footer */
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding-top: 4px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .attribution {
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .attribution a {
+      color: #818cf8;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .attribution a:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    .update-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--secondary-bg);
+      border: 1px solid var(--secondary-border);
+      border-radius: 20px;
+      color: var(--text-main) !important;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .update-badge:hover {
+      background: var(--secondary-hover);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .update-badge svg {
+      color: #818cf8;
     }
   </style>
 </head>
@@ -470,9 +549,19 @@
     </button>
   </section>
 
-  <div class="footer">
-    <span>created by <a href="https://github.com/Youssef-Ghafir" target="_blank">YG</a></span>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="attribution">
+      Made by <a href="https://github.com/Prince94-p" target="_blank">Prince Patel</a>
+    </div>
+    <a href="https://github.com/Prince94-p/SkillPilot" target="_blank" class="update-badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+        <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      </svg>
+      Check for updates
+    </a>
+  </footer>
 
   <script src="popup.js"></script>
 </body>
