@@ -6,71 +6,27 @@
   <title>SkillPilot - Coursera AI Assistant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-gradient: linear-gradient(145deg, #0b0f19 0%, #111827 100%);
-      --card-bg: rgba(17, 24, 39, 0.75);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover-border: rgba(99, 102, 241, 0.3);
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --text-dim: #6b7280;
-      
-      --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-      --primary-hover: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-      --primary-glow: rgba(99, 102, 241, 0.35);
-      
-      --accent-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      --accent-hover: linear-gradient(135deg, #059669 0%, #047857 100%);
-      --accent-glow: rgba(16, 185, 129, 0.3);
-      
-      --secondary-bg: rgba(31, 41, 55, 0.8);
-      --secondary-hover: rgba(55, 65, 81, 0.9);
-      --secondary-border: rgba(255, 255, 255, 0.1);
-
-      --radius-lg: 14px;
-      --radius-md: 10px;
-      --radius-sm: 8px;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg-gradient: linear-gradient(145deg, #f8fafc 0%, #edf2f7 100%);
-        --card-bg: rgba(255, 255, 255, 0.85);
-        --card-border: rgba(226, 232, 240, 0.9);
-        --card-hover-border: rgba(99, 102, 241, 0.4);
-        --text-main: #0f172a;
-        --text-muted: #475569;
-        --text-dim: #94a3b8;
-        
-        --secondary-bg: #f1f5f9;
-        --secondary-hover: #e2e8f0;
-        --secondary-border: #cbd5e1;
-      }
-    }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      width: 375px;
-      padding: 20px;
+      width: 360px;
+      padding: 18px;
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg-gradient);
-      color: var(--text-main);
+      background-color: #0b0e17;
+      color: #f1f5f9;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      backdrop-filter: blur(20px);
+      gap: 14px;
     }
 
-    /* Modern App Header */
+    /* Header */
     .app-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 2px;
     }
 
     .brand-container {
@@ -80,15 +36,14 @@
     }
 
     .brand-logo {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      background: linear-gradient(135deg, #7047eb 0%, #8b5cf6 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
-      position: relative;
+      box-shadow: 0 4px 12px rgba(112, 71, 235, 0.35);
     }
 
     .brand-logo svg {
@@ -105,30 +60,28 @@
     }
 
     .app-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
       line-height: 1.2;
+      letter-spacing: -0.01em;
     }
 
     .app-subtitle {
       font-size: 0.72rem;
-      color: var(--text-muted);
+      color: #94a3b8;
       font-weight: 500;
     }
 
     .status-badge {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 4px 9px;
+      gap: 6px;
+      padding: 4px 10px;
       background: rgba(16, 185, 129, 0.12);
       border: 1px solid rgba(16, 185, 129, 0.25);
       border-radius: 20px;
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 600;
       color: #10b981;
     }
@@ -138,44 +91,30 @@
       height: 6px;
       background-color: #10b981;
       border-radius: 50%;
-      box-shadow: 0 0 8px #10b981;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(0.95); opacity: 0.8; }
+      box-shadow: 0 0 6px #10b981;
     }
 
     /* Cards */
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
+      background: #111726;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
       padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-      backdrop-filter: blur(12px);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: var(--card-hover-border);
     }
 
     .card-header {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .card-icon-wrap {
-      width: 26px;
-      height: 26px;
-      border-radius: 7px;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
       background: rgba(99, 102, 241, 0.15);
       color: #818cf8;
       display: flex;
@@ -183,30 +122,29 @@
       justify-content: center;
     }
 
-    .card-icon-wrap.accent {
+    .card-icon-wrap.green {
       background: rgba(16, 185, 129, 0.15);
       color: #34d399;
     }
 
     .card-title {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      color: #f8fafc;
     }
 
     .card-desc {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin-top: -6px;
-      line-height: 1.35;
+      font-size: 0.74rem;
+      color: #94a3b8;
+      margin-top: -4px;
+      line-height: 1.4;
     }
 
-    /* Custom Input with Password Toggle */
+    /* Inputs */
     .input-wrapper {
-      position: relative;
       display: flex;
+      gap: 10px;
       align-items: center;
-      gap: 8px;
     }
 
     .input-field-container {
@@ -218,31 +156,24 @@
 
     input {
       width: 100%;
-      height: 38px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--secondary-border);
-      background-color: rgba(0, 0, 0, 0.15);
-      padding: 0 36px 0 12px;
-      font-size: 0.82rem;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid #283548;
+      background-color: #0b0e17;
+      padding: 0 38px 0 12px;
+      font-size: 0.84rem;
       font-family: inherit;
-      color: var(--text-main);
-      transition: all 0.2s ease;
-    }
-
-    @media (prefers-color-scheme: light) {
-      input {
-        background-color: #ffffff;
-      }
+      color: #ffffff;
+      transition: border-color 0.2s;
     }
 
     input:focus {
       outline: none;
       border-color: #6366f1;
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
     }
 
     input::placeholder {
-      color: var(--text-dim);
+      color: #64748b;
     }
 
     .toggle-pw-btn {
@@ -250,17 +181,16 @@
       right: 10px;
       background: none;
       border: none;
-      color: var(--text-muted);
+      color: #64748b;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 4px;
-      border-radius: 4px;
     }
 
     .toggle-pw-btn:hover {
-      color: var(--text-main);
+      color: #94a3b8;
     }
 
     /* Buttons */
@@ -269,122 +199,108 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      border-radius: var(--radius-md);
-      font-size: 0.82rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
       font-weight: 600;
       font-family: inherit;
-      height: 40px;
+      height: 42px;
       padding: 0 16px;
       cursor: pointer;
       width: 100%;
       border: none;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.15s ease;
     }
 
     .btn:active {
-      transform: scale(0.97);
+      transform: scale(0.98);
     }
 
-    .btn-primary {
-      background: var(--primary-gradient);
+    .btn-save {
+      width: auto;
+      height: 40px;
+      padding: 0 18px;
+      background-color: #232a3b;
       color: #ffffff;
-      box-shadow: 0 4px 14px var(--primary-glow);
+      border: 1px solid #334155;
     }
 
-    .btn-primary:hover:not(:disabled) {
-      background: var(--primary-hover);
-      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.5);
+    .btn-save:hover {
+      background-color: #2d374d;
     }
 
-    .btn-accent {
-      background: var(--accent-gradient);
+    .btn-quiz {
+      background: #5442e6;
       color: #ffffff;
-      box-shadow: 0 4px 14px var(--accent-glow);
+      box-shadow: 0 4px 14px rgba(84, 66, 230, 0.3);
     }
 
-    .btn-accent:hover:not(:disabled) {
-      background: var(--accent-hover);
-      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
+    .btn-quiz:hover:not(:disabled) {
+      background: #4634d6;
     }
 
-    .btn-secondary {
-      background: var(--secondary-bg);
-      color: var(--text-main);
-      border: 1px solid var(--secondary-border);
+    .btn-copy {
+      background: #172033;
+      color: #ffffff;
+      border: 1px solid #27344d;
     }
 
-    .btn-secondary:hover:not(:disabled) {
-      background: var(--secondary-hover);
+    .btn-copy:hover:not(:disabled) {
+      background: #1e2a42;
+    }
+
+    .btn-media {
+      background: #00a86b;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 168, 107, 0.3);
+    }
+
+    .btn-media:hover:not(:disabled) {
+      background: #00965f;
     }
 
     .btn:disabled {
       opacity: 0.6;
       cursor: not-allowed;
-      transform: none !important;
-    }
-
-    .btn-sm {
-      height: 38px;
-      padding: 0 14px;
-      width: auto;
-      white-space: nowrap;
     }
 
     .meta-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
-      font-size: 0.72rem;
+      margin-top: -4px;
     }
 
     #status {
+      font-size: 0.72rem;
       color: #10b981;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      margin-right: auto;
     }
 
     .link-key {
+      font-size: 0.72rem;
       color: #818cf8;
       text-decoration: none;
       font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      transition: color 0.15s ease;
     }
 
     .link-key:hover {
-      color: #a5b4fc;
       text-decoration: underline;
     }
 
-    /* Output Results Box */
     #result {
       font-size: 0.78rem;
       line-height: 1.5;
       padding: 12px;
-      border-radius: var(--radius-md);
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
+      border-radius: 8px;
+      background: #0b0e17;
+      border: 1px solid #1e293b;
+      color: #f1f5f9;
       display: none;
-      max-height: 160px;
+      max-height: 150px;
       overflow-y: auto;
-      backdrop-filter: blur(6px);
     }
 
-    #result::-webkit-scrollbar {
-      width: 4px;
-    }
-    #result::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 4px;
-    }
-
-    /* Loading Spinner */
     .spinner {
       width: 14px;
       height: 14px;
@@ -399,58 +315,49 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Styled Footer */
+    /* Footer */
     .footer {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
       padding-top: 4px;
       font-size: 0.75rem;
-      color: var(--text-muted);
-      text-align: center;
+      color: #94a3b8;
     }
 
     .attribution {
       font-weight: 500;
-      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .attribution a {
       color: #818cf8;
-      font-weight: 700;
+      font-weight: 600;
       text-decoration: none;
-      transition: color 0.15s ease;
     }
 
     .attribution a:hover {
-      color: #a5b4fc;
       text-decoration: underline;
     }
 
     .update-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       padding: 5px 12px;
-      background: var(--secondary-bg);
-      border: 1px solid var(--secondary-border);
+      background: #172033;
+      border: 1px solid #27344d;
       border-radius: 20px;
-      color: var(--text-main) !important;
+      color: #ffffff !important;
       font-size: 0.72rem;
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.2s ease;
     }
 
     .update-badge:hover {
-      background: var(--secondary-hover);
-      border-color: rgba(99, 102, 241, 0.4);
-      transform: translateY(-1px);
-    }
-
-    .update-badge svg {
-      color: #818cf8;
+      background: #1e2a42;
     }
   </style>
 </head>
@@ -497,7 +404,7 @@
           </svg>
         </button>
       </div>
-      <button id="saveBtn" class="btn btn-secondary btn-sm">Save</button>
+      <button id="saveBtn" class="btn btn-save">Save</button>
     </div>
 
     <div class="meta-row">
@@ -518,12 +425,12 @@
     </div>
     <span class="card-desc">Automatically detect and solve assignment questions silently.</span>
     
-    <button id="explainBtn" class="btn btn-primary">
+    <button id="explainBtn" class="btn btn-quiz">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       Solve Current Quiz
     </button>
     
-    <button id="showQuestionsBtn" class="btn btn-secondary">
+    <button id="showQuestionsBtn" class="btn btn-copy">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
       Copy Questions Only
     </button>
@@ -534,7 +441,7 @@
   <!-- Section: Media Automation -->
   <section class="card">
     <div class="card-header">
-      <div class="card-icon-wrap accent">
+      <div class="card-icon-wrap green">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
@@ -543,8 +450,8 @@
     </div>
     <span class="card-desc">Instantly mark lectures, videos, and readings as completed.</span>
 
-    <button id="completeVideosBtn" class="btn btn-accent">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <button id="completeVideosBtn" class="btn btn-media">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       Complete Materials
     </button>
   </section>
